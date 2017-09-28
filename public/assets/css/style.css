@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+.write{
+	font-family: 'Open Sans'
+}
+p{
+	color: white;
+	font-family: Slabo;
+}
+.headstyle{
+	height: 600px;
+	background-color: black;
+}
+.headstylevidzhet{
+	height: 240px;
+	background-color: black;
+}
+.headst{
+	text-align: center;
+}
+.navigation{
+	border: thin solid #555555;
+	color: white;
+}
+.createcontent{
+	background-image: url(/assets/img/body-bg.gif);
+	text-align: center;
+}
+.admincontent{
+	background-image: url(/assets/img/body-bg.gif);
+}
+.admincontent{
+	text-align: center;
+}
+.admincattable{
+	border: thin solid black;
+	width: 60%;
+	background-color: white;
+}
+.admincatcaption{
+	border: thin solid black;
+	text-align: center;
+	background-color: white;
+}
+.catinside{
+	border: thin solid black;
+	height: 60px;
+	text-align: center;
+}
+.headinside{
+	border: thin solid white;
+	height: 40px;
+	font-weight: 600;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+.navel{
+	display: inline-block;
+	padding: 20px;
+	margin-left: 30px;
+	font-size: 12pt;
+	font-family: Slabo;
+	font-weight: bold;
+}
+.bodysection{
+	background-image: url(/assets/img/body-bg.gif); 
+}
+.logo{
+ 	max-width: 100%;
+  	height: auto;
+}
+.nav-wr{
+	margin-left: 25px;
+	font-weight: bold;
+	font-size: 11pt;
+}
+.top-cat{
+	text-align: center;
+	font-family: 'IM Fell Great Primer';
+	color: white;
+}
+.top-category{
+	border: thin solid white;
+}
+.editcolor{
+	color: #E6AD00;
+}
+.pril-menu{
+	background-color: black;
+}
+#top_nav{
+	top: 600px;
+	position: fixed;
+	z-index: 1000;
+	width: 100%
+}
+.icons{
+	width: 40px;
+}
+.test{
+	color: black;
+}
+
+
+
+
+.showindexcat{
+	border: thin solid black;
+	width: 97%;
+	float: left;
+	margin-bottom: 20px;
+
+}
+.showcatindexhead{
+	border: thin solid black;
+	background-color: black;
+	color: white;
+	font-family: Slabo;
+	font-size: 12pt;
+	font-weight: bold;
+	padding: 10px;
+}
+.showcatindexinside{
+	border: thin solid black;
+	font-size: 14pt;
+	background-color: white;
+	font-family: Lobster;
+	text-align: center;
+	color: black;
+}
+
+
+
+
+
+
+.showcat{
+	border: thin solid black;
+	width: 97%;
+	float: left;
+	margin-bottom: 20px;
+
+}
+.showcathead{
+	border: thin solid black;
+	background-color: black;
+	color: white;
+	font-family: Slabo;
+	font-size: 12pt;
+	font-weight: bold;
+	padding: 10px;
+}
+.showcatinside{
+	font-size: 14pt;
+	background-color: white;
+	font-family: Lobster;
+	text-align: center;
+	color: black;
+	width: 50%;
+}
+.mainpict{
+	background-color: white;
+	padding: 10px;
+	color: black;
+}
+.rightcol{
+	width: 30%;
+	background-color: white;
+	color: black;
+}
+a.catlink{
+	color: black;
+}
+.tablebottom{
+	font-family: Comfortaa;
+	text-align: center;
+	list-style-type: none;
+	font-size: 12pt;
+	color: black;
+}
+.fa.fa-bookmark-o{
+	margin-right: 5px;
+}
+.reklamaimg{
+	width: 100%;
+	height: 300px;
+}
+.imgr{
+	width: 100%;
+	height: 298px;
+	border: thin solid black;
+}
+.rabotai{
+	color: red;
+}
+.foot{
+	background-image: url(/assets/img/body-bg.gif);
+	
+}
+.footlist{
+	list-style-type: none;
+}
+.footwr{
+	display: inline-block;
+	margin-left: 20px;
+	font-size: 12pt;
+	z-index: 2;
+
+}
+.ssilki{
+	color: black;
+	font-weight: bold;
+	font-size: 16pt;
+	font-family: Slabo;
+	margin-top: -5px;
+}
+.Page{
+
+}
+.ChatBox{
+	height: 300px;
+	overflow: auto;
+	border: thin solid black;
+}
+.ChatBlock{
+	border: thin solid black;
+	background-color: grey;
+	padding: 10px;
+	color: black;
+	margin:10px;
+}
+.ChatBlock span{
+	color: red;
+	font-size: 10px;
+	display: block;
+}
+.ChatMessage{
+	resize: none;
+	padding: 5px;
+}
+.blackword{
+	color: black;
+}
+.messsagetable1{
+	width: 25%;
+	border-right:thin solid black;
+	border-bottom:thin solid black;
+	background-color: white;
+	padding: 10px;
+}
+.messsagetable2{
+	width: 75%;
+	border-bottom:thin solid black;
+	background-color: white;
+	padding: 10px;
+	height: 200px;
+	vertical-align: text-top;
+}
+.obovsem{
+
+}
+.dosug{
+	display: none;
+}
+.it{
+	display: none;
+}
+.tehnika{
+	display: none;
+}
+.biznes{
+	display: none;
+}
+.turizm{
+	display: none;
+}
+.urist{
+	display: none;
+}
+.tableinsidecat{
+	background-color: white;
+	border-bottom: thin solid black;
+}
+.tableinsidecat1{
+	padding: 10px;
+}
+.regwidzh{
+	
+}
+.fa.fa-search{
+	color: white;
+	font-size: 50pt;
+	display: block;
+	text-align: center;
+	margin-top: 100px;
+}
+.vvod{
+	border-radius: 4px 4px 4px 4px;
+}
+.fadeel{
+	display: none;
+	width: 92.5%;
+	height: 85.7%;
+	position: absolute;
+	opacity: 0.8;
+	background-color: grey;
+	z-index: 1;
+}
+.fadeel1{
+	display: none;
+	width: 92.5%;
+	height: 85.7%;
+	position: absolute;
+	opacity: 0.8;
+	background-color: grey;
+	z-index: 1;
+}
+.fadeel2{
+	display: none;
+	width: 92.5%;
+	height: 85.7%;
+	position: absolute;
+	opacity: 0.8;
+	background-color: grey;
+	z-index: 1;
+}
+#toTop {
+width:100px;
+border:1px solid #ccc;
+background:#f7f7f7;
+text-align:center;
+padding:5px;
+position:fixed;
+bottom:50px; /* отступ кнопки от нижнего края страницы*/
+right:10px;
+cursor:pointer;
+display:none;
+color:#333;
+font-family:verdana;
+font-size:11px;
+z-index: 1;
+}
+.cat_bottom{
+	border: thin solid black;
+	height: 40px;
+	width: 361px;
+	background-color: white;
+}
+.cattehnikawr{
+	padding: 5px;
+	font-size: 14pt;
+	text-align: center;
+}
