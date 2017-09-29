@@ -1,18 +1,52 @@
 <?php
 
 Route::get('/',['uses'=>'HomeController@show','as'=>'home']);
-Route::get('/login',['uses'=>'User\UserController@showlogin','as'=>'login']);
+
+
+Route::match(['get','post'],'/login',['uses'=>'User\UserController@showlogin','as'=>'test']);
+
+
 Route::get('/registration',['uses'=>'User\UserController@showregistration','as'=>'registration']);
+
+
 Route::get('/category',['uses'=>'CategoryController@showallcategory','as'=>'showcat']);
+
+Route::get('/category/{id}',['uses'=>'CategoryController@get_one_theme','as'=>'showonetheme']);
+
 Route::get('/chat',['uses'=>'ChatController@showchat','as'=>'registration']);
+
+
 Route::match(['get','post'],'/test/{id?}',['uses'=>'TestController@showform','as'=>'test']);
+
+
+Route::match(['get','post'],'/login',['uses'=>'User\UserController@showlogin','as'=>'login']);
+
+Route::match(['get','post'],'/sregistration',['uses'=>'User\UserController@showregistration','as'=>'registration']);
+
+
 Route::get('/about',['as'=>'about','uses'=>'AboutController@show']);
+
+
 Route::get('/admin',['as'=>'admin','uses'=>'Admin\IndexController@show']);
+
+
 Route::get('/admin/create',['as'=>'create','uses'=>'Admin\IndexController@create']);
+
+
 Route::get('/admin/edit/{id}',['as'=>'edit','uses'=>'Admin\IndexController@edit']);
+
+
 Route::get('/admin/delete/{id}',['as'=>'delete','uses'=>'Admin\IndexController@delete']);
+
+
 Route::post('/admin/editcat',['as'=>'createcat','uses'=>'Admin\IndexController@editcat']);
+
+
 Route::post('/admin/createcat',['as'=>'createcat','uses'=>'Admin\IndexController@createcat']);
+
+
+Route::post('/slogin',['as'=>'submitlogin','uses'=>'User\UserController@submitlogin']);
+
 
 /*Route::get('/',['as'=>'home','middleware'=>'mymiddle', function () {
     return view('welcome');

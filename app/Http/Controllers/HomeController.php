@@ -12,7 +12,7 @@ class HomeController extends Controller
 	    {
 	    	if (view()->exists('home')) {
     		#если файл существует
-    		return view('home',['title'=>'Hello World']);//key=>value
+    		return view('home',['title'=>'Главная']);//key=>value
     	}
 	    }    
 

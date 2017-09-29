@@ -19,7 +19,10 @@
       <br>
 
 
-      <form action="#" method="POST">
+      <form action="{{ url('/login') }}" method="POST">
+      
+      {!! csrf_field() !!}
+
       <p class="blackword">Email:</p>
         <i style="font-size: 16pt;" class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;<input id="secondform" class="vvod" type="email" name="email" placeholder="E-mail" value="" requred>&nbsp;<span style="color: red;" class="nameerror1"></span><br>
         <p class="blackword" id="paswr">Пароль:</p>

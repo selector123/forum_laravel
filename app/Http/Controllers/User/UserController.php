@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-
+use App\Users;
+use App\Error;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -11,17 +12,98 @@ class UserController extends Controller
 {
     public function showlogin()
     {
+        $email = '';
+        $password = '';
+        if (isset($_SESSION['user'])) {
+            $id = $_SESSION['user'];
+            $username = User::getUserById($id);
+        }
+        
+        
+        if (isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            
+            $errors = false;
+                        
+            // Валидация полей
+            if (!Users::checkEmail($email)) {
+                $errors[] = 'Неправильный email';
+            }            
+            if (!Users::checkPassword($password)) {
+                $errors[] = 'Пароль не должен быть короче 6-ти символов';
+            }
+            if (!Users::checkUserPas($email, $password)) {
+                $errors[] = 'Пароли не совпадают!';
+            }
+
+
+            
+            // Проверяем существует ли пользователь
+            $userId = Users::checkUserData($email, $password);
+            $isadmin = Users::isAdmin($userId);
+            
+            if ($userId == false) {
+                // Если данные неправильные - показываем ошибку
+                $errors[] = 'Неправильные данные для входа на сайт';
+            } else {
+                if ($isadmin['role'] == 'admin') {
+                    Users::auth($userId);
+                    header("Location: /adminpanel/"); 
+                } else{
+                // Если данные правильные, запоминаем пользователя (сессия)
+                Users::auth($userId);
+                $result = true;
+                // Перенаправляем пользователя в закрытую часть - кабинет 
+                
+            }
+            }
+            }
     	if (view()->exists('user')) {
     		#если файл существует
-    		return view('user',['title'=>'Hello World']);//key=>value
+    		return view('user',['title'=>'Вход','errors'=>@$errors,'result'=>@$result]);//key=>value
     	}
-    }
+    
+}
 
     public function showregistration()
     {
+        if (isset($_POST['submit'])) {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            $errors = false;
+            
+            if (!Users::checkName($name)) {
+                $errors[] = 'Имя не должно быть короче 2-х символов';
+            }
+            if (Users::isAz($name)) {
+                $errors[] = 'В имени пользователя разрешены только буквы английского алфавита';
+            }
+            
+            if (!Users::checkEmail($email)) {
+                $errors[] = 'Неправильный email';
+            }
+            
+            if (!Users::checkPassword($password)) {
+                $errors[] = 'Пароль не должен быть короче 6-ти символов';
+            }
+            
+            if (Users::checkEmailExists($email)) {
+                $errors[] = 'Такой email уже используется';
+            }
+            if ($errors == false){
+                $result = Users::registr($name, $email, $password);
+                if ($result) {
+                echo 'OK';
+            }
+            }
+            
+        }
     	if (view()->exists('userreg')) {
-    		#если файл существует
-    		return view('userreg',['title'=>'Hello World']);//key=>value
-    	}
+            #если файл существует
+            return view('userreg',['title'=>'Вход','errors'=>@$errors,'result'=>@$result]);//key=>value
+        }
     }
 }

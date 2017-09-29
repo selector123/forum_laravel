@@ -86,6 +86,7 @@
               <ul class="dropdown-menu">
                 <li><a href="/login/">Войти</a></li>
                 <li><a href="/registration/">Регистрация</a></li>
+                <li><a href="/admin/">Админпанель</a></li>
               </ul>
               </li>
               <li><a class="nav-wr" href="/chat/">05.ЧАТ</a></li>
@@ -157,6 +158,7 @@
                 <li><a href="/login/">Войти</a></li>
               <?php endif; ?>
                 <li><a href="/registration/">Регистрация</a></li>
+                <li><a href="/admin/">Админпанель</a></li>
 
 
 
