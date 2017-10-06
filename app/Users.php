@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Users extends Model
 {
-    /**
+     /**
      * Регистрация пользователя 
      * @param type $name
      * @param type $email
@@ -16,8 +16,8 @@ class Users extends Model
     public static function registr($name, $email, $password)
     {
 
-        $result = DB::insert("INSERT INTO `users` (`name`,`email`,`password`) VALUES (?,?,?)",[
-                    $name,$email,$password
+        $result = DB::insert("INSERT INTO `users` (`name`,`email`,`password`,`role`) VALUES (?,?,?,?)",[
+                    $name,$email,$password,'user'
                 ]);
         if ($result) {
         	return $result;
@@ -172,10 +172,6 @@ public static function isAz($name)
     } else{
         return false;
     }
-
-
-
-
-
 }
+
 }

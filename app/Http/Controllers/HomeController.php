@@ -10,9 +10,9 @@ class HomeController extends Controller
 {
 	public function show()
 	    {
-	    	if (view()->exists('home')) {
+	    	if (view()->exists('v_showhomecontent')) {
     		#если файл существует
-    		return view('home',['title'=>'Главная']);//key=>value
+    		return view('v_showhomecontent',['title'=>'Главная']);//key=>value
     	}
 	    }    
 

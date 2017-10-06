@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\User;
-
-use Illuminate\Http\Request;
 use App\Users;
-use App\Error;
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -59,9 +56,9 @@ class UserController extends Controller
             }
             }
             }
-    	if (view()->exists('user')) {
+    	if (view()->exists('v_userlogcontent')) {
     		#если файл существует
-    		return view('user',['title'=>'Вход','errors'=>@$errors,'result'=>@$result]);//key=>value
+    		return view('v_userlogcontent',['title'=>'Вход','errors'=>@$errors,'result'=>@$result]);//key=>value
     	}
     
 }
@@ -101,9 +98,16 @@ class UserController extends Controller
             }
             
         }
-    	if (view()->exists('userreg')) {
+    	if (view()->exists('v_showuserregcontent')) {
             #если файл существует
-            return view('userreg',['title'=>'Вход','errors'=>@$errors,'result'=>@$result]);//key=>value
+            return view('v_showuserregcontent',['title'=>'Вход','errors'=>@$errors,'result'=>@$result]);//key=>value
+        }
+    }
+    public function showcabinet()
+    {
+        if (view()->exists('v_showcabinetcontent')) {
+            #если файл существует
+            return view('v_showcabinetcontent',['title'=>'Вход','errors'=>@$errors,'result'=>@$result]);//key=>value
         }
     }
 }

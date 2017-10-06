@@ -1,18 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use DB;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    public function show()
+     public function show()
     {
-    	if (view()->exists('admin')) {
+    	if (view()->exists('v_showadmincontent')) {
     		#если файл существует
             $rescat = DB::select("SELECT * FROM `categories`");
             $rescatc = count($rescat);
@@ -20,7 +17,7 @@ class IndexController extends Controller
             for ($i=1; $i < $rescatc; $i++) { 
                 $result[$i] = DB::select("SELECT * FROM `obs_forums` WHERE section = ?",[$i]);
             }
-    		return view('admin',['title'=>'Adminpanel','result'=>$result,'rescat'=>$rescat]);//key=>value
+    		return view('v_showadmincontent',['title'=>'Adminpanel','result'=>$result,'rescat'=>$rescat]);//key=>value
     	}
     	
     	#задаем значение для переменной
@@ -32,16 +29,16 @@ class IndexController extends Controller
     }
     public function create()
     {
-        if (view()->exists('create')) {
+        if (view()->exists('v_showcreatecontent')) {
             #если файл существует
-            return view('create',['title'=>'Создать тему']);//key=>value
+            return view('v_showcreatecontent',['title'=>'Создать тему']);//key=>value
         }
     }
     public function edit($id)
     {
-        if(view()->exists('edit')){
+        if(view()->exists('v_showeditcontent')){
             $result = DB::select("SELECT * FROM `obs_forums` WHERE id=:id",['id'=>$id]);
-            return view('edit',['title'=>'Редактировать тему','id'=>$id,'result'=>$result]);
+            return view('v_showeditcontent',['title'=>'Редактировать тему','id'=>$id,'result'=>$result]);
         }
     }
     public function editcat($id)
@@ -65,8 +62,8 @@ class IndexController extends Controller
                 $close = $_POST['close'];
                 $name = $_POST['name'];
                 $author = $_POST['author'];
-            $result = DB::insert("INSERT INTO `obs_forums` (`section`,`close`,`name`,`author`) VALUES (?,?,?,?)",[
-                    $section,$close,$name,$author
+            $result = DB::insert("INSERT INTO `obs_forums` (`section`,`close`,`name`,`author`,`last_post`) VALUES (?,?,?,?,?)",[
+                    $section,$close,$name,$author,$name
                 ]);
             if ($result) {
                 echo 'Данные успешно внесены!';
